@@ -1,0 +1,61 @@
+Array
+(
+    [CONTEXT_DOCUMENT_ROOT] => /home2/niemann8/data.niemann.app
+    [CONTEXT_PREFIX] => 
+    [DOCUMENT_ROOT] => /home2/niemann8/data.niemann.app
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [H2PUSH] => on
+    [H2_PUSH] => on
+    [H2_PUSHED] => 
+    [H2_PUSHED_ON] => 
+    [H2_STREAM_ID] => 1
+    [H2_STREAM_TAG] => 1431-1
+    [HTTP2] => on
+    [HTTPS] => on
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate, br
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.9
+    [HTTP_CACHE_CONTROL] => max-age=0
+    [HTTP_COOKIE] => optimizelyEndUserId=oeu1634215114201r0.08617222474027386; _hjid=e2841874-1c89-4574-883b-48c8570072e4; _gcl_au=1.1.315618779.1644036135; _hjSessionUser_23213=eyJpZCI6IjYyOTUxYWJmLWM4MzEtNTEzNi05MmY1LTkwN2UyOTkwN2NjOSIsImNyZWF0ZWQiOjE2NDQwMzYxMzU1OTgsImV4aXN0aW5nIjp0cnVlfQ==; _ga=GA1.2.191950781.1644036654; _clck=20f34v|1|f09|0; _gid=GA1.2.1596901731.1648870014; _uetsid=bcbc5500b23411ec857b177545313cf3; _uetvid=a54bd5302ceb11ecbabaaf9e6fa07238
+    [HTTP_HOST] => data.niemann.app
+    [HTTP_SEC_CH_UA] => " Not A;Brand";v="99", "Chromium";v="99", "Google Chrome";v="99"
+    [HTTP_SEC_CH_UA_MOBILE] => ?0
+    [HTTP_SEC_CH_UA_PLATFORM] => "Windows"
+    [HTTP_SEC_FETCH_DEST] => document
+    [HTTP_SEC_FETCH_MODE] => navigate
+    [HTTP_SEC_FETCH_SITE] => none
+    [HTTP_SEC_FETCH_USER] => ?1
+    [HTTP_UPGRADE_INSECURE_REQUESTS] => 1
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36
+    [PATH] => /bin:/usr/bin
+    [PATH_INFO] => /user/list
+    [PATH_TRANSLATED] => /home2/niemann8/data.niemann.app/index.php
+    [PHP_INI_SCAN_DIR] => /opt/cpanel/ea-php73/root/etc:/opt/cpanel/ea-php73/root/etc/php.d:.
+    [QUERY_STRING] => limit=2
+    [REDIRECT_STATUS] => 200
+    [REMOTE_ADDR] => 185.229.59.183
+    [REMOTE_PORT] => 39394
+    [REQUEST_METHOD] => GET
+    [REQUEST_SCHEME] => https
+    [REQUEST_URI] => /index.php/user/list?limit=2
+    [SCRIPT_FILENAME] => /home2/niemann8/data.niemann.app/index.php
+    [SCRIPT_NAME] => /index.php
+    [SERVER_ADDR] => 108.167.172.202
+    [SERVER_ADMIN] => webmaster@data.niemann.app
+    [SERVER_NAME] => data.niemann.app
+    [SERVER_PORT] => 443
+    [SERVER_PROTOCOL] => HTTP/2.0
+    [SERVER_SIGNATURE] => 
+    [SERVER_SOFTWARE] => Apache
+    [SSL_TLS_SNI] => data.niemann.app
+    [UNIQUE_ID] => YkkgNc-5oq_rvnfs8PARgQAFlxY
+    [PHP_SELF] => /index.php/user/list
+    [REQUEST_TIME_FLOAT] => 1648959541.7477
+    [REQUEST_TIME] => 1648959541
+    [argv] => Array
+        (
+            [0] => limit=2
+        )
+
+    [argc] => 1
+)
