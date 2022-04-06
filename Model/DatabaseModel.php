@@ -1,7 +1,7 @@
 <?php
 // TODO: convert mysqli to PDO
 
-class Database {
+class DatabaseModel {
   protected $conn = null;
 
   // constructor opens the database connection
