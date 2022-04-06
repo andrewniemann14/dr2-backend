@@ -1,7 +1,8 @@
 <?php
+// only one option: get last two challenges to feed the "current challenges" view
 class ChallengeController extends BaseController {
 
-  public function listAction() {
+  public function controlChallenges() {
     $strErrorDesc = '';
     $requestMethod = $_SERVER['REQUEST_METHOD'];
     $arrQueryStringParams = $this->getQueryStringParams();
@@ -10,7 +11,7 @@ class ChallengeController extends BaseController {
       try {
         $challengeModel = new ChallengeModel();
 
-        $intLimit = 10;
+        $intLimit = 2;
         if (isset($arrQueryStringParams['limit']) && $arrQueryStringParams['limit']) {
           $intLimit = $arrQueryStringParams['limit'];
         }
