@@ -1,7 +1,7 @@
 <?php
 // TODO: convert mysqli to PDO
 
-class DatabaseModel {
+class Dao {
   protected $conn = null;
 
   // constructor opens the database connection
@@ -31,42 +31,19 @@ class DatabaseModel {
     return false;
   }
 
-
-
-
-
-
-
-
-
-
-
-
-  
-  // 
-  private function executeStatement($query = "", $params = []) {
+  private function executeStatement($query = "", $params = []) { // params: ["ssi", $name, $stage, $limit]
     try {
       $stmt = $this->conn->prepare($query);
-
       if ($stmt === false) {
         throw New Exception("Unable to do prepared statement: " . $query);
       }
-
       if ($params) {
-        // 0 is type, 1 is value
-        $stmt->bind_param($params[0], $params[1]);
+        $stmt->bind_param(array_slice($params, 0, 1)[0], ...array_slice($params, 1));
       }
-
       $stmt->execute();
-
       return $stmt;
     } catch (Exception $e) {
       throw New Exception($e->getMessage());
     }
   }
-
-
-
-
-
 }

@@ -9,7 +9,7 @@ class ChallengeController extends BaseController {
 
     if (strtoupper($requestMethod) == 'GET') {
       try {
-        $challengeModel = new ChallengeModel();
+        $challengeDao = new ChallengeDao();
 
         $intLimit = 2;
         if (isset($arrQueryStringParams['limit']) && $arrQueryStringParams['limit']) {
