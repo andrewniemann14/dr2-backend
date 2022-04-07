@@ -1,8 +1,8 @@
 <?php
 // https://code.tutsplus.com/tutorials/how-to-build-a-simple-rest-api-in-php--cms-37000
 
-// http://localhost/dr2/index.php/challenges?name=8ourne
-// URI [0] =   [1] = dr2  [2] = index.php  [3] = challenges/entries
+// http://data.niemann.app/dr2/index.php/challenges?name=8ourne
+// URI [0] =   [1] = dr2  [2] = index.php  [3] = challenges/leaderboard
 // queryParams [name] = 8ourne
 
 
@@ -22,12 +22,12 @@ $uri = explode('/', $uri);
 //   exit();
 // }
 
-if ($uri[2] == 'challenges') {
+if ($uri[3] == 'challenges') {
   $controller = new ChallengeController();
-} else if ($uri[2] == 'leaderboard') {
+} else if ($uri[3] == 'leaderboard') {
   $controller = new LeaderboardController();
 }
 
-$methodName = 'control' . ucfirst($uri[2]); // controlLeaderboard()
+$methodName = 'control' . ucfirst($uri[3]); // controlLeaderboard()
 $controller->{$methodName}();
 ?>
