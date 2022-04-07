@@ -22,12 +22,17 @@ $uri = explode('/', $uri);
 //   exit();
 // }
 
-if ($uri[3] == 'challenges') {
-  $controller = new ChallengeController();
-} else if ($uri[3] == 'leaderboard') {
-  $controller = new LeaderboardController();
+if (isset($uri[3])) {
+  if ($uri[3] == 'challenges') {
+    $controller = new ChallengeController();
+  } else if ($uri[3] == 'leaderboard') {
+    $controller = new LeaderboardController();
+  }
+  
+  $methodName = 'control' . ucfirst($uri[3]); // controlLeaderboard()
+  $controller->{$methodName}();
+} else {
+  echo '<b>Possible queries:</b><br/>/challenges?limit=2<br/>/leaderboard?name=8ourne<br/>/leaderboard?name=8ourne?limit=100<br/>/leaderboard?name=8ourne?stage=blahblah?class=eRallyR5Caps<br/>/leaderboard?name=8ourne?stage=blahblah?limit=10<br/>/leaderboard?stage=blahblah?class=eRallyR5Caps?limit=10<br/>';
 }
 
-$methodName = 'control' . ucfirst($uri[3]); // controlLeaderboard()
-$controller->{$methodName}();
 ?>
