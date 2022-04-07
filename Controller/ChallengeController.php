@@ -16,7 +16,7 @@ class ChallengeController extends BaseController {
           $intLimit = $arrQueryStringParams['limit'];
         }
 
-        $arrChallenges = $challengeModel->getChallenges($intLimit);
+        $arrChallenges = $challengeDao->getChallenges($intLimit);
         $responseData = json_encode($arrChallenges);
       } catch (Error $e) {
         $strErrorDesc = $e->getMessage() . 'Something went wrong! Please contact support';
@@ -32,7 +32,7 @@ class ChallengeController extends BaseController {
     if (!$strErrorDesc) {
       $this->sendOutput(
         $responseData,
-        array('Content-Type: application/json', 'HTTP/1.1 200 OK'));
+        array('Content-Type: application/json', 'HTTP/1.1 200 OK', 'Access-Control-Allow-Origin: http://localhost:3000'));
     } else {
       $this->sendOutput(
         json_encode(array('error' => $strErrorDesc)),
