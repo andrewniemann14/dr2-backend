@@ -30,7 +30,6 @@ class LeaderboardController extends BaseController {
         }
 
         // CALL APPROPRIATE FUNCTION
-        // TODO: fix Dao.php so multi-parameters work
         if (!isset($strName) && isset($strStage) && isset($strClass)) {
           $arrResults = $leaderboardDao->getFastestGlobalsForStageAndClass($strStage, $strClass, $intLimit);
         }
