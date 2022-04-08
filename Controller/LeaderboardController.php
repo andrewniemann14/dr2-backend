@@ -70,7 +70,7 @@ class LeaderboardController extends BaseController {
     if (!$strErrorDesc) {
       $this->sendOutput(
         $responseData,
-        array('Content-Type: application/json', 'HTTP/1.1 200 OK', 'Access-Control-Allow-Origin: http://localhost:3000'));
+        array('Content-Type: application/json', 'HTTP/1.1 200 OK', 'Access-Control-Allow-Origin: *'));
     } else {
       $this->sendOutput(
         json_encode(array('error' => $strErrorDesc)),
