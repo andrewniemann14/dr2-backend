@@ -14,11 +14,11 @@ class LeaderboardController extends BaseController {
         // SET PARAMETERS
         $strName = null;
         if (isset($arrQueryStringParams['name']) && $arrQueryStringParams['name']) {
-          $strName = $arrQueryStringParams['name'];
+          $strName = str_replace('%20', ' ', $arrQueryStringParams['name']);
         }
         $strStage = null;
         if (isset($arrQueryStringParams['stage']) && $arrQueryStringParams['stage']) {
-          $strStage = $arrQueryStringParams['stage'];
+          $strStage = str_replace('%20', ' ', $arrQueryStringParams['stage']);
         }
         $strClass = null;
         if (isset($arrQueryStringParams['class']) && $arrQueryStringParams['class']) {
@@ -27,6 +27,11 @@ class LeaderboardController extends BaseController {
         $intLimit = null;
         if (isset($arrQueryStringParams['limit']) && $arrQueryStringParams['limit']) {
           $intLimit = $arrQueryStringParams['limit'];
+        }
+
+        $intId = null;
+        if (isset($arrQueryStringParams['id']) && $arrQueryStringParams['id']) {
+          $intId = $arrQueryStringParams['id'];
         }
 
         // CALL APPROPRIATE FUNCTION
@@ -44,6 +49,10 @@ class LeaderboardController extends BaseController {
         }
         if (isset($strName) && !isset($strClass) && !isset($strStage) && !isset($intLimit)) {
           $arrResults = $leaderboardDao->getAllPersonals($strName);
+        }
+
+        if (isset($intId)) {
+          $arrResults = $leaderboardDao->getFullChallenge($intId);
         }
 
         $responseData = json_encode($arrResults);
