@@ -11,12 +11,14 @@ class ChallengeController extends BaseController {
       try {
         $challengeDao = new ChallengeDao();
 
-        $intLimit = 2;
-        if (isset($arrQueryStringParams['limit']) && $arrQueryStringParams['limit']) {
-          $intLimit = $arrQueryStringParams['limit'];
+        $intId = null;
+        if (isset($arrQueryStringParams['id']) && $arrQueryStringParams['id']) {
+          $intId = $arrQueryStringParams['id'];
+          $arrChallenges = $challengeDao->getChallenge($intId);
+        } else {
+          $arrChallenges = $challengeDao->getLastChallenges($arrQueryStringParams['limit']);
         }
 
-        $arrChallenges = $challengeDao->getChallenges($intLimit);
         $responseData = json_encode($arrChallenges);
       } catch (Error $e) {
         $strErrorDesc = $e->getMessage() . 'Something went wrong! Please contact support';

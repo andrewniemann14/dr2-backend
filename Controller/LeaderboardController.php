@@ -52,7 +52,7 @@ class LeaderboardController extends BaseController {
         }
 
         if (isset($intId)) {
-          $arrResults = $leaderboardDao->getChallenge($intId);
+          $arrResults = $leaderboardDao->getSingleLeaderboard($intId);
         }
 
         $responseData = json_encode($arrResults);

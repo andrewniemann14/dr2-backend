@@ -32,8 +32,9 @@ class LeaderboardDao extends Dao {
   }
 
   // /leaderboard?id=123456
-  public function getChallenge($id) {
-    return $this->select("SELECT * FROM challenges INNER JOIN leaderboard ON leaderboard.challenge_id = challenges.id WHERE challenge_id = ?", ["i", $id]);
+  public function getSingleLeaderboard($id) {
+    return $this->select("SELECT * FROM leaderboard WHERE challenge_id = ?", ["i", $id]);
+    // return $this->select("SELECT * FROM challenges INNER JOIN leaderboard ON leaderboard.challenge_id = challenges.id WHERE challenge_id = ?", ["i", $id]);
   }
 
 
