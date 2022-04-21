@@ -28,7 +28,7 @@ class LeaderboardDao extends Dao {
 
   // /leaderboard?stage=blahblah?class=eR5C?limit=10
   public function getFastestGlobalsForStageAndClass($stage, $class, $limit) {
-    return $this->select("SELECT * FROM challenges INNER JOIN leaderboard ON leaderboard.challenge_id = challenges.id WHERE stage = ? AND vehicle_class = ? ORDER BY time ASC LIMIT ?", ["ssi", $stage, $class, $limit]);
+    return $this->select("SELECT * FROM challenges INNER JOIN leaderboard ON leaderboard.challenge_id = challenges.id WHERE stage = ? AND vehicle_class = ? GROUP BY name ORDER BY time ASC LIMIT ?", ["ssi", $stage, $class, $limit]);
   }
 
   // /leaderboard?id=123456
