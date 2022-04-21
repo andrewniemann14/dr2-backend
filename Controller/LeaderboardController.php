@@ -41,6 +41,9 @@ class LeaderboardController extends BaseController {
         if (isset($strName) && isset($strStage) && isset($strClass)) {
           $arrResults = $leaderboardDao->getFastestPersonalForStageAndClass($strName, $strStage, $strClass);
         }
+        if (isset($strName) && !isset($strClass) && isset($strStage) && !isset($intLimit)) {
+          $arrResults = $leaderboardDao->getFastestPersonalsForStagePerClass($strName, $strStage);
+        }
         if (isset($strName) && !isset($strClass) && isset($strStage) && isset($intLimit)) {
           $arrResults = $leaderboardDao->getFastestPersonalsForStage($strName, $strStage, $intLimit);
         }
