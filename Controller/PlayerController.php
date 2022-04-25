@@ -2,7 +2,7 @@
 // 
 class PlayerController extends BaseController {
 
-  public function controlPlayer() {
+  public function controlPlayers() {
     $strErrorDesc = '';
     $requestMethod = $_SERVER['REQUEST_METHOD'];
     $arrQueryStringParams = $this->getQueryStringParams();
@@ -26,6 +26,8 @@ class PlayerController extends BaseController {
           $arrResults = $playerDao->getPlayer($strName);
         } else if (isset($intLimit)) {
           $arrResults = $playerDao->getPlayersTopPoints($intLimit);
+        } else {
+          $arrResults = $playerDao->getPlayersAll();
         }
 
         $responseData = json_encode($arrResults);
