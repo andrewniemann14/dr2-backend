@@ -17,7 +17,11 @@ class BaseController {
   // gets query params, returns array
   // query params = ?key=value?key=value
   protected function getQueryStringParams() {
+<<<<<<< HEAD
     if (substr_count($_SERVER['QUERY_STRING'], '=')) {
+=======
+    if (substr_count($_SERVER['QUERY_STRING'], '?')) {
+>>>>>>> ef156ef71a2f7be37fb1b4cd3e299724db2fc74b
       $qryStrSplit = explode('?', $_SERVER['QUERY_STRING']);
       $queryParams = array();
       foreach ($qryStrSplit as $q) {
