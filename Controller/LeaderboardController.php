@@ -35,6 +35,9 @@ class LeaderboardController extends BaseController {
         }
 
         // CALL APPROPRIATE FUNCTION
+        if (!isset($strName) && isset($strStage) && !isset($strClass)) {
+          $arrResults = $leaderboardDao->getFastestGlobalsForStage($strStage);
+        }
         if (!isset($strName) && isset($strStage) && isset($strClass)) {
           $arrResults = $leaderboardDao->getFastestGlobalsForStageAndClass($strStage, $strClass, $intLimit);
         }
